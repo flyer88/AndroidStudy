@@ -10,6 +10,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/bootcompletereceiver" />
+            <option value="$PROJECT_DIR$/userdefinedbroadcast" />
+            <option value="$PROJECT_DIR$/userdefinedbroadcast2" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BroadCast.iml" filepath="$PROJECT_DIR$/BroadCast.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/InternetReceiver.iml" filepath="$PROJECT_DIR$/app/InternetReceiver.iml" />
       <module fileurl="file://$PROJECT_DIR$/bootcompletereceiver/bootcompletereceiver.iml" filepath="$PROJECT_DIR$/bootcompletereceiver/bootcompletereceiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userdefinedbroadcast/userdefinedbroadcast.iml" filepath="$PROJECT_DIR$/userdefinedbroadcast/userdefinedbroadcast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userdefinedbroadcast2/userdefinedbroadcast2.iml" filepath="$PROJECT_DIR$/userdefinedbroadcast2/userdefinedbroadcast2.iml" />
     </modules>
   </component>
 </project>

@@ -1,1 +1,1 @@
-include ':app', ':bootcompletereceiver'
+include ':app', ':bootcompletereceiver', ':userdefinedbroadcast', ':userdefinedbroadcast2'
