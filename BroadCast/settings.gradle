@@ -1,1 +1,1 @@
-include ':app', ':bootcompletereceiver', ':userdefinedbroadcast', ':userdefinedbroadcast2'
+include ':app', ':bootcompletereceiver', ':userdefinedbroadcast', ':userdefinedbroadcast2', ':localbroadcast', ':forcetooffline'

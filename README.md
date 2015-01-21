@@ -23,3 +23,7 @@
 	- 新建test2,manifest静态注册一个与上述自定义broadcast接收一样的广播接收器`
 	- 在test1中将`sendBroadcast(intent)`改为`sendOrderBroadcast(intent)`
 	- 在AnotherBroadcast中`abortBroadcast()`截断广播
++ localBroadcast
+	- `localBroadcastManager = LocalBroadcastManager.getInstance(this)`
+	- `localBroadcastManager.sendBroadcast(intent)`
+	- `localBroadcastManager.registerReceiver(localReceiver,intentFilter)`
