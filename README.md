@@ -7,7 +7,7 @@
 + `shouldOverrideUrlLoading()` 
 + `webView.loadUrl(url)`
 
-#####  1-20:learn Broadcast:
+#####  1-20--1-23:learn Broadcast:
 + 动态注册(registerReceiver)
 	- 创建IntentFilter实例,添加action;
 	- 创建广播接收器-->重写onReceive()
