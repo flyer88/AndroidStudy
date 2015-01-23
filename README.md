@@ -27,3 +27,21 @@
 	- `localBroadcastManager = LocalBroadcastManager.getInstance(this)`
 	- `localBroadcastManager.sendBroadcast(intent)`
 	- `localBroadcastManager.registerReceiver(localReceiver,intentFilter)`
++ 强制下线
+	- `ActivityCollector`泛型操作所有的`activity`（`addActivity(..){}removeActivity(..){}finishALl(..){}`）		
+			BaseActivity extends Activity{
+              ..onCreate{ActivityCollector.addActivity}
+          	..onDestroy{ActivityCollector.removeActivity}  
+          }	
+        
+    - 
+    	
+   		LoginActivity extends BaseActivity{}
+   		MainActivity extends BaseActivity{}
+	- 	`MainActivity`中设置按钮，调用`sendBroadcast(intent)`;
+	- 	`Manifest`中注册广播
+	- 	`ForceToOfflineReceiver`接收处理广播,弹出`AlertDialog`	
+	- 	确定后重新启动`LoginActivity`,因为广播启动,需要在intent中添加flag,即:`intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);`
+	- 	`AlertDialog`需要依附于一个具体的`Activity`所以在调用`show()`之前需要`getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);`表明这是一个系统级别的`AlertDialog`,依附于系统界面
+	
+

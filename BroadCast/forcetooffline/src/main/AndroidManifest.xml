@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.holyboom.forcetooffline" >
-
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
+        <receiver android:name=".ForceToOfflineReceiver">
+            <intent-filter>
+                <action android:name="com.holyboom.FORCE_TO_OFFLINE"></action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
