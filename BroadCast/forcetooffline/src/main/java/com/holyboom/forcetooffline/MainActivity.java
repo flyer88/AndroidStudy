@@ -1,13 +1,11 @@
 package com.holyboom.forcetooffline;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
-
-public class MainActivity extends ActionBarActivity {
-
+/**
+ * Created by flyer on 15-1-23.
+ */
+public class MainActivity extends BaseActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
