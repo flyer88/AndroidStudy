@@ -1,39 +1,54 @@
 package com.holyboom.contentprovider;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    EditText contentEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
+        contentEdit = (EditText)findViewById(R.id.content);
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    protected void onDestroy() {
+        super.onDestroy();
+        save(contentEdit.getText().toString());
+    }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    public void save(String contentString){
+        FileOutputStream out = null;
+        BufferedWriter writer = null;
+        try{
+            out = openFileOutput("data", Context.MODE_PRIVATE);
+            writer = new BufferedWriter(new OutputStreamWriter(out));
+            writer.write(contentString);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try{
+                if (writer!=null){
+                    writer.close();
+                }
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }
