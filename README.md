@@ -43,5 +43,31 @@
 	- 	`ForceToOfflineReceiver`接收处理广播,弹出`AlertDialog`	
 	- 	确定后重新启动`LoginActivity`,因为广播启动,需要在intent中添加flag,即:`intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);`
 	- 	`AlertDialog`需要依附于一个具体的`Activity`所以在调用`show()`之前需要`getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);`表明这是一个系统级别的`AlertDialog`,依附于系统界面
-	
+
+
+
+##### 1-24:ContentProvider
++ 文件存储读取 
+	存:openFileOutput;
+	取:openFileInput;
+		FileOutputStream out = null;
+        BufferedWriter writer = null;
+        try{
+            out = openFileOutput("data", Context.MODE_PRIVATE);
+            writer = new BufferedWriter(new OutputStreamWriter(out));
+            writer.write(contentString);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally{
+      		try{
+				if(writer!=null){
+					writer.close();
+				}
+			}catch(...){..}
+		} 
+		
++ sharedPreferences
+	- 获取`sharedPreferences`对象`getSharedPreferences()`或者`PreferenceManager.getDefaultSharedPreferences()`
+	- 对数据存储`editor = pref.edit()`调用`editor.putString("name",name)`,再调用`editor.commit()`提交,或者`editor.clear()`清楚数据
+	- 数据读取 `name = pref.getString("name","")`
 
