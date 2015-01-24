@@ -6,9 +6,15 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
         <Button
+            android:text="savedata"
             android:id="@+id/save_data"
             android:layout_marginTop="160dp"
             android:layout_width="match_parent"
             android:layout_height="40dp" />
-
+        <Button
+            android:layout_marginTop="220dp"
+            android:text="restore"
+            android:id="@+id/restore_data"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
 </RelativeLayout>
