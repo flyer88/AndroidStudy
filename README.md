@@ -70,4 +70,7 @@
 	- 获取`sharedPreferences`对象`getSharedPreferences()`或者`PreferenceManager.getDefaultSharedPreferences()`
 	- 对数据存储`editor = pref.edit()`调用`editor.putString("name",name)`,再调用`editor.commit()`提交,或者`editor.clear()`清楚数据
 	- 数据读取 `name = pref.getString("name","")`
++ SQLite
+	- 创建/更新数据库
+	- CRUD操作
 
