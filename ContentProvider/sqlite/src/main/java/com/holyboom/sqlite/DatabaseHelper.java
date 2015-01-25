@@ -16,7 +16,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             "author text," +
             "price real," +
             "pages integer," +
-            "name text)";
+            "name text," +
+            "category_id integer)";
     public static final String CREATE_CATEGORY ="create table Category(" +
             "id integer primary key autoincrement," +
             "category_name text," +
@@ -36,10 +37,23 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         Toast.makeText(this.context,"数据库创建成功",Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * 数据库升级,无break防止跳版本升级
+     * @param db
+     * @param oldVersion
+     * @param newVersion
+     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("drop table if exists Book");
-        db.execSQL("drop table if exists Category");
-        onCreate(db);
+        switch (oldVersion) {
+            case 1:
+                db.execSQL(CREATE_CATEGORY);
+            case 2:
+                db.execSQL("alter table Book add column category_id integer");
+            default:
+        }
+//        db.execSQL("drop table if exists Book");
+//        db.execSQL("drop table if exists Category");
+//        onCreate(db);
     }
 }

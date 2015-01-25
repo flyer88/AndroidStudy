@@ -112,6 +112,27 @@
 				}while(cursor.moveToNext())
 			}
 			cursor.close();
+	- 事务
+			   SQLiteDatabase db = databaseHelper.getWritableDatabase();
+               db.beginTransaction();//开启事务
+               try {
+                   db.delete("Book",null,null);
+                   //if (true){
+                   //   throw new NullPointerException();
+                   //}//手动抛出异常,事务不成功,关闭异常事务成功
+                   ContentValues values = new ContentValues();
+                   values.put("name","Game of Thrones");
+                   values.put("author","George Martin");
+                   values.put("pages",720);
+                   values.put("price",20.85);
+                   db.insert("Book",null,values);
+                   db.setTransactionSuccessful();//事务执行成功
+               }catch (Exception e){
+                   e.printStackTrace();
+               }finally {
+                   db.endTransaction();
+               }
+           
 			
 		
 

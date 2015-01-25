@@ -36,4 +36,9 @@
         android:id="@+id/query_data"
         android:layout_width="match_parent"
         android:layout_height="40dp" />
+    <Button
+        android:text="重置数据库"
+        android:id="@+id/replace_data"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
 </LinearLayout>
