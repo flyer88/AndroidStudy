@@ -72,5 +72,46 @@
 	- 数据读取 `name = pref.getString("name","")`
 + SQLite
 	- 创建/更新数据库
+		`dbhelper = new mDatabaseHelper(context,"BookStore.db",null,1);`
+		第一次调用`getWritableDatabase()`会调用`mDatabaseHelper`的`onCreate()`方法
+		`db.execSQL("sql语句");`
+			class mDatabaseHelper extends SQLiteOpenHelper{
+				
+				onCreate(){
+					db.execSQL("")
+				}
+				
+				onUpgrade(){
+					db.execSQL("drop table if exists Book");
+					db.execSQL("..")
+					onCreate(db);
+				}
+			}
+			
 	- CRUD操作
+			SQLiteDatabase db = dbHelper.getWritableDatabase();
+			ContentValues values = new ContentValues();
+			values.put("name","flyer");
+			:
+			:
+			db.insert("表名",null,values);
+			values.clear();
+			values.put();
+			:
+			:
+			db.update("table_name",values,"naem = ?",new String[]{"flyer"});
+			db.delete("table_name",values,"name = ?",new String[]{"flyer"});
+			
+	 query操作
+			SQLiteDatabase db = dbHelper.getWritableDatabase();
+			Cursor cursor = db.query("table_name",null,null,null,null,null,null);
+			if(cursor.moveToFirst()){
+				do{
+					String name = cursor.getString(cursor,getColumnIndex("name"));
+					String author = cursor.get....
+				}while(cursor.moveToNext())
+			}
+			cursor.close();
+			
+		
 
