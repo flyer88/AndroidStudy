@@ -1,1 +1,1 @@
-include ':app', ':sharedpreferences', ':sharedpreferencesrememberpwd', ':sqlite'
+include ':app', ':sharedpreferences', ':sharedpreferencesrememberpwd', ':sqlite', ':contactsfromcontentprovider'

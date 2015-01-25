@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.Currency;
 
 /**
  * Created by flyer on 15-1-25.
