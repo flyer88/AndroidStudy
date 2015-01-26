@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/contactsfromcontentprovider" />
+            <option value="$PROJECT_DIR$/mycontentprovider" />
             <option value="$PROJECT_DIR$/sharedpreferences" />
             <option value="$PROJECT_DIR$/sharedpreferencesrememberpwd" />
             <option value="$PROJECT_DIR$/sqlite" />
