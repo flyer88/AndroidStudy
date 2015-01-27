@@ -46,7 +46,7 @@
 
 
 
-##### 1-24:ContentProvider
+##### 1-24--1-27:Data,ContentProvider
 + 文件存储读取 
 	存:openFileOutput;
 	取:openFileInput;
@@ -132,7 +132,14 @@
                }finally {
                    db.endTransaction();
                }
-           
++ ContentProvider
+    - ConentResolver
+    - myContentProvider
+
+    - 跨程序数据共享　
+
+##### 1-27:Notification
++ 
 			
 		
 
