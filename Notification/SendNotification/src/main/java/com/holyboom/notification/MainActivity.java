@@ -33,6 +33,8 @@ public class MainActivity extends ActionBarActivity {
                  * lolipop中不推荐，ticker内容不会被显示
                  */
                 Notification notification = new Notification(R.drawable.ic_launcher,"This is a ticker text",System.currentTimeMillis());
+                //设置震动铃声等等，采用默认设置
+                notification.defaults = Notification.DEFAULT_ALL;
                 Intent intent = new Intent(MainActivity.this,NotificationActivity.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this,0,intent,PendingIntent.FLAG_CANCEL_CURRENT);
                 /**

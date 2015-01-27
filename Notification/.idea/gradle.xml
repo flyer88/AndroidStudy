@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/SendNotification" />
+            <option value="$PROJECT_DIR$/receivesms" />
           </set>
         </option>
       </GradleProjectSettings>
