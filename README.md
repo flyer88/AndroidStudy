@@ -139,7 +139,16 @@
     - 跨程序数据共享　
 
 ##### 1-27:Notification
-+ 
-			
++ 通知栏（`notification`）
+	- `NotificationManager manager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE)`
+	- `Notification notification = Notification(R.drawable.picture,"ticker",System.currentTimeMills())`
+	- `notification.setLatestEventInfo(context,"title","content",pendintIntent)`
+	-  `manager.notify(id,notification)`
++ 收发短信（）
+	－ 获取`Bundle`,转换成`SmsMessage[]`
+			Bundle bundle = intent.getExtras();
+            Object[] pdus = (Object[])bundle.get("pdus");
+            SmsMessage[] messages = new SmsMessage[pdus.length];
+		
 		
 
