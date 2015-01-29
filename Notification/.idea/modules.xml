@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Notification.iml" filepath="$PROJECT_DIR$/Notification.iml" />
       <module fileurl="file://$PROJECT_DIR$/SendNotification/SendNotification.iml" filepath="$PROJECT_DIR$/SendNotification/SendNotification.iml" />
       <module fileurl="file://$PROJECT_DIR$/receivesms/receivesms.iml" filepath="$PROJECT_DIR$/receivesms/receivesms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/usecamera/usecamera.iml" filepath="$PROJECT_DIR$/usecamera/usecamera.iml" />
     </modules>
   </component>
 </project>

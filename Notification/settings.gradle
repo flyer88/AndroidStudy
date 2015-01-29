@@ -1,1 +1,1 @@
-include ':SendNotification', ':receivesms'
+include ':SendNotification', ':receivesms', ':usecamera'
