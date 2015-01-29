@@ -34,4 +34,40 @@
             android:layout_gravity="center_vertical"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:text="To: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/to"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Content: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/msg_input"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/send_msg"
+        android:text="sendMSG"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
 </LinearLayout>
