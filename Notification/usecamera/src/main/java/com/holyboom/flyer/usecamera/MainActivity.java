@@ -69,7 +69,8 @@ public class MainActivity extends ActionBarActivity {
             case CROP_PHOTO:
                 if(resultCode == RESULT_OK){
                     try{
-                        Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
+                        Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().
+                                openInputStream(imageUri));
                         photo.setImageBitmap(bitmap);//展现剪裁后的图片
                     }catch (Exception e){
                         e.printStackTrace();
