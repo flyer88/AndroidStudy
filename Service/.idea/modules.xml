@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Service.iml" filepath="$PROJECT_DIR$/Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/asynctaskupdateui/asynctaskupdateui.iml" filepath="$PROJECT_DIR$/asynctaskupdateui/asynctaskupdateui.iml" />
       <module fileurl="file://$PROJECT_DIR$/updateuiinthread/updateuiinthread.iml" filepath="$PROJECT_DIR$/updateuiinthread/updateuiinthread.iml" />
     </modules>
   </component>

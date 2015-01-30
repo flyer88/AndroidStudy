@@ -1,1 +1,1 @@
-include ':updateuiinthread'
+include ':updateuiinthread', ':asynctaskupdateui'
