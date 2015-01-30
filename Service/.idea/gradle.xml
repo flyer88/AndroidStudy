@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/asynctaskupdateui" />
+            <option value="$PROJECT_DIR$/servicelearn" />
             <option value="$PROJECT_DIR$/updateuiinthread" />
           </set>
         </option>

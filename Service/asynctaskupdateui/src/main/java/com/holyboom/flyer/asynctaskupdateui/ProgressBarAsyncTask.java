@@ -38,11 +38,9 @@ public class ProgressBarAsyncTask extends AsyncTask<Integer,Integer,String> {
     protected String doInBackground(Integer... params) {
         NetOperator netOperator = new NetOperator();
         int j = 0;
-        for (int i = 0; i <= 100; i+=10) {
+        for (int i = 0; i <= 100; i+=2) {
             netOperator.operate();
-                if((i % 10) ==0) {
-                    publishProgress(i);
-                }
+            publishProgress(i);
             j = i;
         }
         return j + "";
