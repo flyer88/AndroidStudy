@@ -2,6 +2,7 @@ package com.holyboom.flyer.servicelearn;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -9,9 +10,19 @@ import android.util.Log;
  * Created by flyer on 15/1/30.
  */
 public class MyService extends Service{
+
+    DownloadBinder downloadBinder = new DownloadBinder();
+    class DownloadBinder extends Binder{
+        public void startDownload(){
+            Log.e("Myservice","startDownload 运行");
+        }
+        public void getProgress(){
+            Log.e("Myservice","getProgress 运行");
+        }
+    }
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        return downloadBinder;
     }
 
     /**
