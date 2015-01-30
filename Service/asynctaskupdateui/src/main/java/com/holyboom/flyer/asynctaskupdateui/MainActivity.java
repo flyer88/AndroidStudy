@@ -29,7 +29,7 @@ public class MainActivity extends ActionBarActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //创建实例，调用execute()触发异步更新程序
+                //创建实例，调用execute(Params... params)触发异步更新程序，
                 ProgressBarAsyncTask progressBarAsyncTask = new ProgressBarAsyncTask(textView,progressBar);
                 progressBarAsyncTask.execute();
             }

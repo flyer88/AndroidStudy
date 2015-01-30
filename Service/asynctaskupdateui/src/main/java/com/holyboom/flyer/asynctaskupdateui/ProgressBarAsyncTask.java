@@ -1,6 +1,7 @@
 package com.holyboom.flyer.asynctaskupdateui;
 
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -27,22 +28,24 @@ public class ProgressBarAsyncTask extends AsyncTask<Integer,Integer,String> {
 
     /**
      * 此方法中主要处理异步操作，在此处处理所有耗时任务
-     * Integer为AsyncTask的第一个参数
-     * 返回值String为AsyncTask的第三个参数
+     * Integer为AsyncTask的第一个参数,此处并无用到（该值由execute传入）
      * 该方法不运行咋UI线程中，无法对UI进行操作
      * 如需要更新UI需要调用publishProgress()方法触发onProgressUpdate()对UI进行操作
      * @param params
-     * @return
+     * @return 返回值String为AsyncTask的第三个参数
      */
     @Override
     protected String doInBackground(Integer... params) {
         NetOperator netOperator = new NetOperator();
-        int i = 0;
-        for (i = 0; i <= 10; i++) {
+        int j = 0;
+        for (int i = 0; i <= 100; i+=10) {
             netOperator.operate();
-            publishProgress(i);
+                if((i % 10) ==0) {
+                    publishProgress(i);
+                }
+            j = i;
         }
-        return i + params[0].intValue() + "";
+        return j + "";
     }
 
     /**
@@ -55,6 +58,7 @@ public class ProgressBarAsyncTask extends AsyncTask<Integer,Integer,String> {
     protected void onProgressUpdate(Integer... values) {
         int value = values[0];
         progressBar.setProgress(value);
+        Log.e("onProgressUpdate",value+"");
     }
 
     /**
@@ -65,6 +69,6 @@ public class ProgressBarAsyncTask extends AsyncTask<Integer,Integer,String> {
      */
     @Override
     protected void onPostExecute(String s) {
-        textView.setText("异步操作结束"+"");
+        textView.setText("异步操作结束"+s);
     }
 }
