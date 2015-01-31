@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.holyboom.flyer.servicelearn" >
+    package="com.holyboom.flyer.servicebestpractice" >
 
     <application
         android:allowBackup="true"
@@ -16,10 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".MyService">
-
-        </service>
-        <service android:name=".MyIntentService"></service>
+        <service android:name=".LongRunningService"></service>
+        <receiver android:name=".AlarmReceiver"></receiver>
     </application>
 
 </manifest>

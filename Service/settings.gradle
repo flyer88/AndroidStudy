@@ -1,1 +1,1 @@
-include ':updateuiinthread', ':asynctaskupdateui', ':servicelearn'
+include ':updateuiinthread', ':asynctaskupdateui', ':servicelearn', ':servicebestpractice'
