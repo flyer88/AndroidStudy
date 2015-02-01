@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Web.iml" filepath="$PROJECT_DIR$/Web.iml" />
       <module fileurl="file://$PROJECT_DIR$/httpurlconnection/httpurlconnection.iml" filepath="$PROJECT_DIR$/httpurlconnection/httpurlconnection.iml" />
       <module fileurl="file://$PROJECT_DIR$/webview/webview.iml" filepath="$PROJECT_DIR$/webview/webview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmlpull/xmlpull.iml" filepath="$PROJECT_DIR$/xmlpull/xmlpull.iml" />
     </modules>
   </component>
 </project>

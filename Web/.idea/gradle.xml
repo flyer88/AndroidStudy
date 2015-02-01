@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/httpclient" />
             <option value="$PROJECT_DIR$/httpurlconnection" />
             <option value="$PROJECT_DIR$/webview" />
+            <option value="$PROJECT_DIR$/xmlpull" />
           </set>
         </option>
       </GradleProjectSettings>
