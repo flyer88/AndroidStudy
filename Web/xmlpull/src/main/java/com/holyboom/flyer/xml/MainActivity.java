@@ -33,9 +33,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             switch (msg.what){
                 case SHOW_RESPONSE:
                     appTextView = (App)msg.obj;
-                    id.setText(appTextView.id);
-                    name.setText(appTextView.name);
-                    version.setText(appTextView.version);
+                    id.append(appTextView.id);
+                    name.append(appTextView.name);
+                    version.append(appTextView.version);
                     break;
                 default:break;
             }
