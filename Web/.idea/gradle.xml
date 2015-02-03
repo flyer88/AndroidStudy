@@ -9,8 +9,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/gson" />
             <option value="$PROJECT_DIR$/httpclient" />
             <option value="$PROJECT_DIR$/httpurlconnection" />
+            <option value="$PROJECT_DIR$/httputil" />
+            <option value="$PROJECT_DIR$/jsonobject" />
             <option value="$PROJECT_DIR$/webview" />
             <option value="$PROJECT_DIR$/xmlpull" />
             <option value="$PROJECT_DIR$/xmlsax" />

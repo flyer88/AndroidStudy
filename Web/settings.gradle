@@ -1,1 +1,1 @@
-include ':HttpClient', ':webview', ':httpurlconnection', ':xmlpull', ':xmlsax'
+include ':HttpClient', ':webview', ':httpurlconnection', ':xmlpull', ':xmlsax', ':jsonobject', ':gson', ':httputil'
