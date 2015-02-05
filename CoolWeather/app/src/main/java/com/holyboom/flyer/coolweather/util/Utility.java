@@ -1,11 +1,17 @@
 package com.holyboom.flyer.coolweather.util;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.holyboom.flyer.coolweather.db.CoolWeatherDB;
 import com.holyboom.flyer.coolweather.model.City;
 import com.holyboom.flyer.coolweather.model.County;
 import com.holyboom.flyer.coolweather.model.Province;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.io.StringReader;
 
 /**
  * Created by flyer on 15/2/4.
@@ -17,7 +23,7 @@ public class Utility {
      * @param response 服务器返回数据
      * @return
      */
-    public synchronized static boolean handleProvincesResponse(CoolWeatherDB coolWeatherDB,String response){
+/*    public synchronized static boolean handleProvincesResponse(CoolWeatherDB coolWeatherDB,String response){
         if (!TextUtils.isEmpty(response)){
             String[] allProvinces = response.split(",");
             if (allProvinces != null && allProvinces.length>0){
@@ -32,6 +38,45 @@ public class Utility {
             }
         }
         return false;
+    }*/
+
+    public synchronized static boolean handleProvincesResponse(CoolWeatherDB coolWeatherDB,String response){
+        if (response!=null) {
+            try {
+                Log.e("handleProvincesResponse", "start handle");
+                XmlPullParserFactory xmlPullParserFactory = XmlPullParserFactory.newInstance();
+                XmlPullParser xmlPullParser = xmlPullParserFactory.newPullParser();
+                xmlPullParser.setInput(new StringReader(response));
+                int eventType = xmlPullParser.getEventType();
+                while (eventType != xmlPullParser.END_DOCUMENT) {
+                    String nodeName = xmlPullParser.getName();
+                    //Log.e("handleProvincesResponse", "node name is " + nodeName);
+                    switch (eventType) {
+                        case XmlPullParser.START_TAG:
+                            if ("city".equals(nodeName)) {
+                                Province province = new Province();
+                                province.setProvinceCode(xmlPullParser.getAttributeValue(0));
+                                province.setProvinceName(xmlPullParser.getAttributeValue(1));
+                                coolWeatherDB.saveProvince(province);
+                                //Log.e("city", "City name is  " + xmlPullParser.getAttributeValue(0));
+                                //Log.e("city", "City pyName is " + xmlPullParser.getAttributeValue(1));
+                            }
+                            break;
+                        case XmlPullParser.END_TAG:
+                            Log.e("xmlPullParse", "End of xml");
+                            break;
+                        default:
+                            break;
+                    }
+                    eventType = xmlPullParser.next();
+                }
+            } catch (Exception e) {
+                Log.e("handleProvincesResponse", "handle exception!!");
+            }
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public synchronized static boolean handleCitiesResponse(CoolWeatherDB coolWeatherDB,String response,int provinceId){

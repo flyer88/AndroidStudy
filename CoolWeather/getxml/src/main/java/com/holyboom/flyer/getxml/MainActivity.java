@@ -77,7 +77,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                         case XmlPullParser.START_TAG:
                             if ("city".equals(nodeName)){
                                 Log.e("city","City name is  "+xmlPullParser.getAttributeValue(0));
-                               // parseContentString(xmlPullParser.nextText());
+                                Log.e("city","City pyName is "+xmlPullParser.getAttributeValue(1));
                             }
                             break;
                         case XmlPullParser.END_TAG:
@@ -88,20 +88,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     }
                     eventType = xmlPullParser.next();
                 }
-               // Log.e("handleProvincesResponse","finish handle");
-
             }catch (Exception e){
                 Log.e("handleProvincesResponse","handle exception!!");
             }
     }
-
-    public void parseContentString(String content){
-        String[] city = content.split(" ");
-        //Log.e("city","All content is "+content);
-        for (int i =0;i<city.length;i++) {
-            Log.e("city", city[i]);
-        }
-        Log.e("parseContentString","finish a city");
-    }
-
 }
