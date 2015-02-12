@@ -14,10 +14,10 @@
 
 
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/material_deep_teal_200</item>
-        <item name="colorPrimaryDark">@color/material_deep_teal_500</item>
+        <item name="colorPrimary">@color/material_blue_grey_800</item>
+        <item name="colorPrimaryDark">@color/material_blue_grey_900</item>
         <item name="android:windowBackground">@android:color/white</item>
-        <item name="android:textColorPrimary">@color/material_blue_grey_800</item>
+        <item name="android:textColorPrimary">@android:color/background_light</item>
     </style>
 
 

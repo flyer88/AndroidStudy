@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ToolBar/ToolBar.iml" filepath="$PROJECT_DIR$/ToolBar/ToolBar.iml" />
       <module fileurl="file://$PROJECT_DIR$/View.iml" filepath="$PROJECT_DIR$/View.iml" />
+      <module fileurl="file://$PROJECT_DIR$/listviewlikeinbox/listviewlikeinbox.iml" filepath="$PROJECT_DIR$/listviewlikeinbox/listviewlikeinbox.iml" />
     </modules>
   </component>
 </project>
