@@ -1,4 +1,4 @@
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,27 +8,29 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="200dp"
         android:background="?attr/colorPrimary">
     </android.support.v7.widget.Toolbar>
     <android.support.v4.widget.DrawerLayout
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:id="@+id/drawer_navigation">
-        <android.support.v4.view.ViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </android.support.v4.view.ViewPager>
-        <ListView
-            android:id="@+id/list_view"
-            android:background="?attr/colorPrimaryDark"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:dividerHeight="1dp"
-            android:text="DrawerLayout" />
+            <android.support.v4.view.ViewPager
+                android:layout_marginTop="200dp"
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v4.view.ViewPager>
+            <ListView
+                android:id="@+id/list_view"
+                android:background="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:dividerHeight="1dp"
+                android:text="DrawerLayout" />
+
 
     </android.support.v4.widget.DrawerLayout>
 
-</LinearLayout>
+</RelativeLayout>

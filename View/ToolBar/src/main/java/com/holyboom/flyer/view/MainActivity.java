@@ -26,15 +26,17 @@ import java.util.zip.Inflater;
 public class MainActivity extends ActionBarActivity {
 
 
-
+    //toolbar
     Toolbar toolbar;
-    DrawerLayout drawerLayout;
-    ListView listView;
-        ActionBarDrawerToggle actionBarDrawerToggle;
 
+    //DrawerLayout
+    DrawerLayout drawerLayout;
+    ActionBarDrawerToggle actionBarDrawerToggle;
+    ListView listView;
     String[] strings = {"A","B","C","D"};
     ArrayAdapter arrayAdapter;
 
+    //ViewPager
     ViewPager viewPager;
     List<View> viewPagerList = new ArrayList<View>() ;
     @Override
@@ -57,7 +59,7 @@ public class MainActivity extends ActionBarActivity {
 
     }
     public void initDrawerLayout(){
-        actionBarDrawerToggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, toolbar, R.string.app_name, R.string.app_name) {
+       actionBarDrawerToggle =  new ActionBarDrawerToggle(MainActivity.this, drawerLayout, toolbar, R.string.app_name, R.string.app_name) {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
