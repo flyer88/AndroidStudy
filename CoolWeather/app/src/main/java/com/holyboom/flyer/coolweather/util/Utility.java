@@ -17,28 +17,23 @@ import java.io.StringReader;
  * Created by flyer on 15/2/4.
  */
 public class Utility {
-    /**
-     * 解析服务器返回数据
-     * @param coolWeatherDB 数据库实例，方便保存数据到数据库
-     * @param response 服务器返回数据
-     * @return
-     */
-/*    public synchronized static boolean handleProvincesResponse(CoolWeatherDB coolWeatherDB,String response){
-        if (!TextUtils.isEmpty(response)){
-            String[] allProvinces = response.split(",");
-            if (allProvinces != null && allProvinces.length>0){
-                for (String p : allProvinces){
-                    String[] array = p.split("\\|");
-                    Province province = new Province();
-                    province.setProvinceCode(array[0]);
-                    province.setProvinceName(array[1]);
-                    coolWeatherDB.saveProvince(province);
-                }
-                return true;
-            }
-        }
-        return false;
-    }*/
+
+//    public synchronized static boolean handleProvincesResponse(CoolWeatherDB coolWeatherDB,String response){
+//        if (!TextUtils.isEmpty(response)){
+//            String[] allProvinces = response.split(",");
+//            if (allProvinces != null && allProvinces.length>0){
+//                for (String p : allProvinces){
+//                    String[] array = p.split("\\|");
+//                    Province province = new Province();
+//                    province.setProvinceCode(array[0]);
+//                    province.setProvinceName(array[1]);
+//                    coolWeatherDB.saveProvince(province);
+//                }
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 
     public synchronized static boolean handleProvincesResponse(CoolWeatherDB coolWeatherDB,String response){
         if (response!=null) {
@@ -79,22 +74,63 @@ public class Utility {
         }
     }
 
-    public synchronized static boolean handleCitiesResponse(CoolWeatherDB coolWeatherDB,String response,int provinceId){
-        if (!TextUtils.isEmpty(response)){
-            String[] allCities = response.split(",");
-            if (allCities != null && allCities.length>0){
-                for (String c :allCities){
-                    String[] array = c.split("\\|");
-                    City city = new City();
-                    city.setCityCode(array[0]);
-                    city.setCityName(array[1]);
-                    city.setProvinceId(provinceId);
-                    coolWeatherDB.saveCity(city);
+//    public synchronized static boolean handleCitiesResponse(CoolWeatherDB coolWeatherDB,String response,int provinceId){
+//        if (!TextUtils.isEmpty(response)){
+//            String[] allCities = response.split(",");
+//            if (allCities != null && allCities.length>0){
+//                for (String c :allCities){
+//                    String[] array = c.split("\\|");
+//                    City city = new City();
+//                    city.setCityCode(array[0]);
+//                    city.setCityName(array[1]);
+//                    city.setProvinceId(provinceId);
+//                    coolWeatherDB.saveCity(city);
+//                }
+//                return  true;
+//            }
+//        }
+//        return  false;
+//    }
+
+    public synchronized static boolean handleCitiesResponse(CoolWeatherDB coolWeatherDB,String response,int prvinceId){
+        if (response !=null){
+            try {
+                XmlPullParserFactory xmlPullParserFactory = XmlPullParserFactory.newInstance();
+                XmlPullParser xmlPullParser = xmlPullParserFactory.newPullParser();
+                xmlPullParser.setInput(new StringReader(response));
+                int eventType = xmlPullParser.getEventType();
+                while (eventType != xmlPullParser.END_DOCUMENT) {
+                    String nodeName = xmlPullParser.getName();
+                    //Log.e("handleProvincesResponse", "node name is " + nodeName);
+                    switch (eventType) {
+                        case XmlPullParser.START_TAG:
+                            if ("city".equals(nodeName)) {
+                                City city = new City();
+                                city.setCityCode(xmlPullParser.getAttributeValue(0));
+                                city.setCityName(xmlPullParser.getAttributeValue(1));
+                                city.setProvinceId(prvinceId);
+                                coolWeatherDB.saveCity(city);
+                                //Log.e("city", "City name is  " + xmlPullParser.getAttributeValue(0));
+                                //Log.e("city", "City pyName is " + xmlPullParser.getAttributeValue(1));
+                            }
+                            break;
+                        case XmlPullParser.END_TAG:
+                            Log.e("xmlPullParse", "End of xml");
+                            break;
+                        default:
+                            break;
+                    }
+                    eventType = xmlPullParser.next();
                 }
-                return  true;
+
+            }catch (Exception e){
+                Log.e("handleCitiesResponse","Exception");
             }
+            return true;
+        }else {
+            return false;
         }
-        return  false;
+
     }
 
     public  synchronized static boolean handleCountiesResponse(CoolWeatherDB coolWeatherDB,String response,int cityId){
@@ -114,5 +150,4 @@ public class Utility {
         }
         return false;
     }
-
 }
