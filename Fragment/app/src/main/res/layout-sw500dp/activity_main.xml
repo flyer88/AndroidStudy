@@ -1,0 +1,18 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <fragment
+        android:name="com.holyboom.flyer.fragment.LeftFragment"
+        android:id="@+id/left_fragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+    <fragment
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:id="@+id/right_fragment"
+        android:name="com.holyboom.flyer.fragment.RightFragment"/>
+</LinearLayout>
+<!--dp= 160*pix/ppi(pix为分辨率前面的值)-->
