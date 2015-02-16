@@ -2,11 +2,8 @@ package com.holyboom.flyer.fragmentpractice;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.Window;
+import android.support.v7.app.ActionBarActivity;
 
 
 public class NewsContentActivity extends ActionBarActivity {
