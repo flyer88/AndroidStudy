@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -39,6 +40,9 @@ public class MainActivity extends ActionBarActivity {
     //ViewPager
     ViewPager viewPager;
     List<View> viewPagerList = new ArrayList<View>() ;
+
+    //CardView
+    CardView cardView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +50,7 @@ public class MainActivity extends ActionBarActivity {
         initToolbar();
         initDrawerLayout();
         initViewPager();
+        initCardView();
 
     }
     public void initToolbar(){
@@ -113,5 +118,8 @@ public class MainActivity extends ActionBarActivity {
         });
 
 
+    }
+    public void initCardView(){
+        cardView = (CardView) findViewById(R.id.card_view);
     }
 }
