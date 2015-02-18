@@ -1,1 +1,1 @@
-include ':ToolBar', ':listviewlikeinbox'
+include ':ToolBar', ':listviewlikeinbox', ':testrecyclerview'

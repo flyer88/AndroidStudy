@@ -9,6 +9,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -43,6 +46,12 @@ public class MainActivity extends ActionBarActivity {
 
     //CardView
     CardView cardView;
+
+    //RecyclerView
+    RecyclerView recyclerView;
+    List list;
+    //RecyclerViewAdapter mRecyclerViewAdapter;
+    //List<String> recyclerViewList = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +60,7 @@ public class MainActivity extends ActionBarActivity {
         initDrawerLayout();
         initViewPager();
         initCardView();
+        initRecyclerView();
 
     }
     public void initToolbar(){
@@ -121,5 +131,20 @@ public class MainActivity extends ActionBarActivity {
     }
     public void initCardView(){
         cardView = (CardView) findViewById(R.id.card_view);
+    }
+    public void initRecyclerView(){
+        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setHasFixedSize(true);
+        list.add("a");
+        list.add("b");
+        recyclerView.setAdapter(new MyAdapter(list,MainActivity.this));
+//        recyclerViewList.add("fuck01");
+//        recyclerViewList.add("fuck02");
+//        recyclerViewList.add("fuck03");
+//        recyclerViewList.add("fuck04");
+//        mRecyclerViewAdapter = new RecyclerViewAdapter(recyclerViewList,MainActivity.this);
+//        recyclerView.setAdapter(mRecyclerViewAdapter);
     }
 }

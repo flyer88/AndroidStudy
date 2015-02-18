@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--android:elevation：z轴大小，5.0有效-->
+<!--app:cardCornerRadius:圆角大小 -->
+<!--app:cardBackgroundColor:背景颜色-->
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:elevation="10dp"
+    app:cardCornerRadius="8dp"
+    app:cardBackgroundColor="?attr/colorPrimary"
+    android:layout_margin="8dp"
+    android:layout_height="80dp"
+    android:layout_width="match_parent">
+
+    <TextView
+        android:id="@+id/text_view"
+        android:text="TextView in CardView"
+        android:layout_gravity="center"
+        android:textSize="26sp"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</android.support.v7.widget.CardView>

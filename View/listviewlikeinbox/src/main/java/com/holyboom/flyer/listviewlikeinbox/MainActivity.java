@@ -21,7 +21,7 @@ public class MainActivity extends ActionBarActivity {
         listView = (ListView) findViewById(R.id.list_view);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-
+        listView.getViewTreeObserver();
         
 
     }
