@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ToolBar/ToolBar.iml" filepath="$PROJECT_DIR$/ToolBar/ToolBar.iml" />
       <module fileurl="file://$PROJECT_DIR$/View.iml" filepath="$PROJECT_DIR$/View.iml" />
+      <module fileurl="file://$PROJECT_DIR$/floatactionbutton/floatactionbutton.iml" filepath="$PROJECT_DIR$/floatactionbutton/floatactionbutton.iml" />
       <module fileurl="file://$PROJECT_DIR$/listviewlikeinbox/listviewlikeinbox.iml" filepath="$PROJECT_DIR$/listviewlikeinbox/listviewlikeinbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tel/tel.iml" filepath="$PROJECT_DIR$/tel/tel.iml" />
       <module fileurl="file://$PROJECT_DIR$/testrecyclerview/testrecyclerview.iml" filepath="$PROJECT_DIR$/testrecyclerview/testrecyclerview.iml" />
     </modules>
   </component>

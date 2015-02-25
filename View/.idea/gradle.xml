@@ -10,7 +10,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/ToolBar" />
+            <option value="$PROJECT_DIR$/floatactionbutton" />
             <option value="$PROJECT_DIR$/listviewlikeinbox" />
+            <option value="$PROJECT_DIR$/tel" />
             <option value="$PROJECT_DIR$/testrecyclerview" />
           </set>
         </option>

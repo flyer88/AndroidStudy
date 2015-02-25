@@ -7,18 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.List;
 
 /**
  * Created by flyer on 15/2/18.
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
 
-    List list;
+    String[] dataSet;
     Context context;
 
-    public  MyAdapter(List list,Context context){
-        this.list = list;
+    public  MyAdapter(String[] dataSet,Context context){
+        this.dataSet = dataSet;
         this.context = context;
     }
 
@@ -26,7 +25,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         public TextView textView;
         public ViewHolder(View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.text_view);
+            textView = (TextView) itemView.findViewById(R.id.text_view_layout);
         }
     }
 
@@ -34,17 +33,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
 
-       View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_view,viewGroup,false);
-        return new ViewHolder(v);
+       View v = LayoutInflater.from(viewGroup.getContext())
+               .inflate(R.layout.text_view,viewGroup,false);
+       ViewHolder viewHolder = new ViewHolder(v);
+        return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        viewHolder.textView.setText(""+i);
+        viewHolder.textView.setText(dataSet[i]);
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return dataSet.length;
     }
 }

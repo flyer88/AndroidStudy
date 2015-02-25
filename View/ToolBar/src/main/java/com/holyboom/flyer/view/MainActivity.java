@@ -49,9 +49,8 @@ public class MainActivity extends ActionBarActivity {
 
     //RecyclerView
     RecyclerView recyclerView;
-    List list;
-    //RecyclerViewAdapter mRecyclerViewAdapter;
-    //List<String> recyclerViewList = new ArrayList<String>();
+    RecyclerView.LayoutManager layoutManager;
+    String[] dataSet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +59,7 @@ public class MainActivity extends ActionBarActivity {
         initDrawerLayout();
         initViewPager();
         initCardView();
-        initRecyclerView();
+        //initRecyclerView();
 
     }
     public void initToolbar(){
@@ -87,10 +86,10 @@ public class MainActivity extends ActionBarActivity {
 
             }
         };
-        actionBarDrawerToggle.syncState();
-        drawerLayout.setDrawerListener(actionBarDrawerToggle);
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, strings);
-        listView.setAdapter(arrayAdapter);
+       actionBarDrawerToggle.syncState();
+       drawerLayout.setDrawerListener(actionBarDrawerToggle);
+       arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, strings);
+       listView.setAdapter(arrayAdapter);
 
     }
     public void initViewPager(){
@@ -106,7 +105,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public Object instantiateItem(ViewGroup container, int position) {
                 container.addView(viewPagerList.get(position));
-                Log.e("instantiateItem viewpager","position is "+position);
+                Log.e("instantiate viewpager","position is "+position);
                 return viewPagerList.get(position);
             }
 
@@ -132,19 +131,15 @@ public class MainActivity extends ActionBarActivity {
     public void initCardView(){
         cardView = (CardView) findViewById(R.id.card_view);
     }
-    public void initRecyclerView(){
-        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setHasFixedSize(true);
-        list.add("a");
-        list.add("b");
-        recyclerView.setAdapter(new MyAdapter(list,MainActivity.this));
-//        recyclerViewList.add("fuck01");
-//        recyclerViewList.add("fuck02");
-//        recyclerViewList.add("fuck03");
-//        recyclerViewList.add("fuck04");
-//        mRecyclerViewAdapter = new RecyclerViewAdapter(recyclerViewList,MainActivity.this);
-//        recyclerView.setAdapter(mRecyclerViewAdapter);
-    }
+//    public void initRecyclerView(){
+//        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+//        recyclerView.setHasFixedSize(true);
+//        LinearLayoutManager linearLayoutManager =new LinearLayoutManager(MainActivity.this);
+//        recyclerView.setLayoutManager(linearLayoutManager);
+//        dataSet = new String[100];
+//        for (int i =0 ;i<10;i++){
+//            dataSet[i]="item"+i;
+//        }
+//        recyclerView.setAdapter(new MyAdapter(dataSet, MainActivity.this));
+//    }
 }
