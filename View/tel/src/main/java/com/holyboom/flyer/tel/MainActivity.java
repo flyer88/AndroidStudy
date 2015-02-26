@@ -4,47 +4,52 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ImageButton;
 
+import com.andexert.library.RippleView;
 import com.holyboom.flyer.tel.MaterialUi.FloatingActionBar.FloatingActionButton;
-import com.holyboom.flyer.tel.MaterialUi.Ripple.RippleView;
 
 
 public class MainActivity extends ActionBarActivity {
 
     FloatingActionButton FAB;
-    RippleView tel_1,tel_2,tel_3,tel_4,tel_5,tel_6,tel_7,tel_8,tel_9,tel_star,tel_0,tel_jin;
+    Button tel_1,tel_2,tel_3,tel_4,tel_5,tel_6,tel_7,tel_8,tel_9,tel_star,tel_0,tel_jin;
+    ImageButton telBack;
     EditText editTextNumber;
+    RippleView rippleView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initPhone();
         inPutPhoneNumber();
+        backInPutPhoneNumber();
         call();
     }
     public void initPhone(){
         int MaterialGreen = getResources().getColor(R.color.green_dark);
-
         editTextNumber  = (EditText) findViewById(R.id.tel_number);
-        tel_1 = (RippleView) findViewById(R.id.tel_1);
-        tel_2 = (RippleView) findViewById(R.id.tel_2);
-        tel_3 = (RippleView) findViewById(R.id.tel_3);
-        tel_4 = (RippleView) findViewById(R.id.tel_4);
-        tel_5 = (RippleView) findViewById(R.id.tel_5);
-        tel_6 = (RippleView) findViewById(R.id.tel_6);
-        tel_7 = (RippleView) findViewById(R.id.tel_7);
-        tel_8 = (RippleView) findViewById(R.id.tel_8);
-        tel_9 = (RippleView) findViewById(R.id.tel_9);
-        tel_star = (RippleView) findViewById(R.id.tel_star);
-        tel_0 = (RippleView) findViewById(R.id.tel_0);
-        tel_jin = (RippleView) findViewById(R.id.tel_jin);
+        telBack = (ImageButton) findViewById(R.id.tel_back);
+        tel_1 = (Button) findViewById(R.id.tel_1);
+        tel_2 = (Button) findViewById(R.id.tel_2);
+        tel_3 = (Button) findViewById(R.id.tel_3);
+        tel_4 = (Button) findViewById(R.id.tel_4);
+        tel_5 = (Button) findViewById(R.id.tel_5);
+        tel_6 = (Button) findViewById(R.id.tel_6);
+        tel_7 = (Button) findViewById(R.id.tel_7);
+        tel_8 = (Button) findViewById(R.id.tel_8);
+        tel_9 = (Button) findViewById(R.id.tel_9);
+        tel_star = (Button) findViewById(R.id.tel_star);
+        tel_0 = (Button) findViewById(R.id.tel_0);
+        tel_jin = (Button) findViewById(R.id.tel_jin);
         FAB = (FloatingActionButton) findViewById(R.id.fab_button_call);
         setThemeColor(MaterialGreen);
         FAB.setDrawable(getResources().getDrawable(R.drawable.call_fab));
+        rippleView = (RippleView) findViewById(R.id.ripple_view);
     }
 
     public void setThemeColor(int color){
@@ -155,6 +160,15 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void backInPutPhoneNumber(){
-
+        telBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int action = KeyEvent.ACTION_DOWN;
+                //code:删除，其他code也可以，例如 code = 0
+                int code = KeyEvent.KEYCODE_DEL;
+                KeyEvent event = new KeyEvent(action, code);
+                editTextNumber.onKeyDown(KeyEvent.KEYCODE_DEL, event); //抛给系统处理了
+            }
+        });
     }
 }

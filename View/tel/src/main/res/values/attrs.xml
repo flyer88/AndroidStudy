@@ -10,10 +10,4 @@
         <attr name="shadowColor" format="integer"/>
     </declare-styleable>
 
-    <!--RippleView-->
-    <declare-styleable name="RippleView">
-        <attr name="rippleColor" format="color" />
-        <attr name="alphaFactor" format="float" />
-        <attr name="hover" format="boolean" />
-    </declare-styleable>
 </resources>
