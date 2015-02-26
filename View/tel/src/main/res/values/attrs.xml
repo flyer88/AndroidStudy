@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!--FloatingActionButton-->
     <declare-styleable name="FloatingActionButton">
         <attr name="drawable" format="integer"/>
         <attr name="colour" format="color"/>
@@ -10,4 +10,10 @@
         <attr name="shadowColor" format="integer"/>
     </declare-styleable>
 
+    <!--RippleView-->
+    <declare-styleable name="RippleView">
+        <attr name="rippleColor" format="color" />
+        <attr name="alphaFactor" format="float" />
+        <attr name="hover" format="boolean" />
+    </declare-styleable>
 </resources>

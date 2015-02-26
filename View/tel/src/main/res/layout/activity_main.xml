@@ -1,6 +1,6 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -25,13 +25,11 @@
         <EditText
             android:id="@+id/tel_number"
             android:gravity="center"
-            android:text="10086"
             android:layout_height="match_parent"
             android:layout_width="0dp"
             android:layout_weight="3"/>
         <ImageButton
             android:background="#fff"
-            android:src="@drawable/delete"
             android:id="@+id/tel_delete"
             android:layout_height="match_parent"
             android:layout_width="0dp"
@@ -45,25 +43,34 @@
             android:layout_width="match_parent"
             android:layout_height="0dip"
             android:layout_weight="1">
-            <Button
+            <com.holyboom.flyer.tel.MaterialUi.Ripple.RippleView
+                ripple:hover="true"
                 android:text="1"
                 android:background="#fff"
+                android:textSize="20sp"
+                android:gravity="center"
                 android:id="@+id/tel_1"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
-            <Button
-                android:text="2 abc"
+            <com.holyboom.flyer.tel.MaterialUi.Ripple.RippleView
+                ripple:hover="true"
+                android:text="2 ABC"
                 android:background="#fff"
+                android:gravity="center"
+                android:textSize="20sp"
                 android:id="@+id/tel_2"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
-            <Button
-                android:text="3 def"
+            <com.holyboom.flyer.tel.MaterialUi.Ripple.RippleView
+                ripple:hover="true"
+                android:text="3 DEF"
                 android:background="#fff"
+                android:gravity="center"
+                android:textSize="20sp"
                 android:id="@+id/tel_3"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
         </TableRow>
@@ -71,25 +78,34 @@
             android:layout_width="match_parent"
             android:layout_height="0dip"
             android:layout_weight="1">
-            <Button
-                android:text="4 ghi"
+            <com.holyboom.flyer.tel.MaterialUi.Ripple.RippleView
+                ripple:hover="true"
+                android:text="4 GHI"
                 android:background="#fff"
+                android:gravity="center"
+                android:textSize="20sp"
                 android:id="@+id/tel_4"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
-            <Button
-                android:text="5 jkl"
+            <com.holyboom.flyer.tel.MaterialUi.Ripple.RippleView
+                ripple:hover="true"
+                android:text="5 JKL"
                 android:background="#fff"
                 android:id="@+id/tel_5"
-                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
-            <Button
-                android:text="6 mno"
+            <com.holyboom.flyer.tel.MaterialUi.Ripple.RippleView
+                ripple:hover="true"
+                android:text="6 MNO"
                 android:background="#fff"
                 android:id="@+id/tel_6"
-                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
         </TableRow>
@@ -97,26 +113,34 @@
             android:layout_width="match_parent"
             android:layout_height="0dip"
             android:layout_weight="1">
-            <Button
-                android:text="7 pqrs"
+            <com.holyboom.flyer.tel.MaterialUi.Ripple.RippleView
+                ripple:hover="true"
+                android:text="7 PQRS"
+                android:textSize="20sp"
                 android:background="#fff"
+                android:gravity="center"
                 android:id="@+id/tel_7"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
-            <Button
-                android:text="8 tuv"
+            <com.holyboom.flyer.tel.MaterialUi.Ripple.RippleView
+                ripple:hover="true"
+                android:text="8 TUV"
                 android:background="#fff"
+                android:textSize="20sp"
                 android:id="@+id/tel_8"
-                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
-            <Button
-                android:text="9 wxyz"
-                android:scaleType="centerCrop"
+            <com.holyboom.flyer.tel.MaterialUi.Ripple.RippleView
+                ripple:hover="true"
+                android:text="9 WXYZ"
+                android:textSize="20sp"
                 android:background="#fff"
+                android:gravity="center"
                 android:id="@+id/tel_9"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
         </TableRow>
@@ -124,28 +148,34 @@
             android:layout_width="match_parent"
             android:layout_height="0dip"
             android:layout_weight="1">
-            <Button
+            <com.holyboom.flyer.tel.MaterialUi.Ripple.RippleView
+                ripple:hover="true"
                 android:text="*"
-                android:scaleType="centerCrop"
                 android:background="#fff"
+                android:textSize="20sp"
+                android:gravity="center"
                 android:id="@+id/tel_star"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
-            <Button
+            <com.holyboom.flyer.tel.MaterialUi.Ripple.RippleView
+                ripple:hover="true"
                 android:text="0"
-                android:scaleType="centerCrop"
                 android:background="#fff"
+                android:textSize="20sp"
+                android:gravity="center"
                 android:id="@+id/tel_0"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
-            <Button
+            <com.holyboom.flyer.tel.MaterialUi.Ripple.RippleView
+                ripple:hover="true"
                 android:text="#"
-                android:scaleType="centerCrop"
+                android:textSize="20sp"
                 android:background="#fff"
+                android:gravity="center"
                 android:id="@+id/tel_jin"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
         </TableRow>
