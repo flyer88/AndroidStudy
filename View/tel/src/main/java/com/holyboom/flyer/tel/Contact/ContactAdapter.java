@@ -33,7 +33,7 @@ public class ContactAdapter<T> extends RecyclerView.Adapter<ContactViewHolder> i
 
     @Override
     public int getItemCount() {
-        return 0;
+        return dataSet.size();
     }
 
     @Override
