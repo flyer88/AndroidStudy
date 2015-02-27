@@ -1,4 +1,4 @@
-package com.holyboom.flyer.tel;
+package com.holyboom.flyer.tel.Contact;
 
 /**
  * Created by flyer on 15/2/26.
