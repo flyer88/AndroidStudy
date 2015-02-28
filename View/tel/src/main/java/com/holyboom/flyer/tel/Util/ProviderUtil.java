@@ -6,6 +6,7 @@ import android.provider.ContactsContract;
 
 import com.holyboom.flyer.tel.Contact.Contact;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,6 +14,7 @@ import java.util.List;
  */
 public class ProviderUtil {
     Context context;
+    List<Contact> contactList = new ArrayList<Contact>();
     public ProviderUtil(Context context){
         this.context = context;
     }
@@ -21,8 +23,8 @@ public class ProviderUtil {
      * 读取所有联系人
      * @return List<Contact>
      */
-    public List<Contact> readAllContacts(){
-        List<Contact> contactList = null;
+    public List<Contact> readAllLocalContacts(){
+
         Cursor cursor = null;
         Contact contact = new Contact(context);
         try{
@@ -30,6 +32,7 @@ public class ProviderUtil {
             while (cursor.moveToNext()){
                 String name = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
                 String number = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                //contactList.add(name+""+number);
                 contact.setContactName(name);
                 contact.setContactNumber(number);
                 contactList.add(contact);
@@ -43,4 +46,7 @@ public class ProviderUtil {
         }
     return contactList;
     }
+//    public List<Contact> readAllSimContacts(){
+//
+//    }
 }

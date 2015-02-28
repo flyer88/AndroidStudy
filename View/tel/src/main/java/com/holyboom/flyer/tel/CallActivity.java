@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.andexert.library.RippleView;
 import com.holyboom.flyer.tel.Contact.ContactActivity;
@@ -22,6 +23,7 @@ public class CallActivity extends ActionBarActivity {
     Button tel_1,tel_2,tel_3,tel_4,tel_5,tel_6,tel_7,tel_8,tel_9,tel_star,tel_0,tel_jin;
     ImageButton telBack;
     EditText editTextNumber;
+    TextView textViewCall;
     RippleView rippleView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class CallActivity extends ActionBarActivity {
     }
     public void initPhone(){
         int MaterialGreen = getResources().getColor(R.color.green_light);
+        textViewCall = (TextView) findViewById(R.id.text_view_call);
         editTextNumber  = (EditText) findViewById(R.id.tel_number);
         telBack = (ImageButton) findViewById(R.id.tel_back);
         tel_1 = (Button) findViewById(R.id.tel_1);
@@ -169,6 +172,8 @@ public class CallActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 String inputStr = editTextNumber.getText().toString();
+                editTextNumber.setText("");
+                textViewCall.setText(inputStr);
                 Intent phoneIntent = new Intent(
                         "android.intent.action.CALL", Uri.parse("tel:"
                         + inputStr));

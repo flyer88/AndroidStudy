@@ -2,38 +2,54 @@ package com.holyboom.flyer.tel.Contact;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.holyboom.flyer.tel.R;
 
 import java.util.List;
 
 /**
  * Created by flyer on 15/2/27.
  */
-public class ContactAdapter<T> extends RecyclerView.Adapter<ContactViewHolder> implements View.OnClickListener{
+public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHolder> implements View.OnClickListener{
 
-    private List<T> dataSet;
-    private Context context;
 
-    public ContactAdapter(Context context,List<T> dataSet){
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView textView;
+        public ViewHolder(View itemView) {
+            super(itemView);
+            textView = (TextView) itemView.findViewById(R.id.text_view_contact);
+        }
+    }
+
+    Context context;
+    List<Contact> contactList;
+
+    public ContactAdapter(Context context,List<Contact> contactList){
         this.context = context;
-        this.dataSet = dataSet;
+        this.contactList = contactList;
     }
 
 
     @Override
-    public ContactViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+    public ContactAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item_contact,parent,false);
+        ViewHolder holder = new ViewHolder(view);
+        return holder;
     }
 
     @Override
-    public void onBindViewHolder(ContactViewHolder holder, int position) {
-
+    public void onBindViewHolder(ContactAdapter.ViewHolder holder, int position) {
+        holder.textView.setText(contactList.get(position).contactName+contactList.get(position).contactNumber);
+        holder.itemView.setTag(contactList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return dataSet.size();
+        return contactList.size();
     }
 
     @Override

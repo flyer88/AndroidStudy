@@ -7,13 +7,13 @@
     tools:context=".MainActivity">
 
 
-    <include layout="@layout/card_view"/>
+    <include layout="@layout/card_view_call"/>
     <LinearLayout
 
         android:background="#fff"
         android:layout_marginTop="80dp"
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="wrap_content">
         <ImageButton
             android:background="#fff"
             android:id="@+id/tel_more"
@@ -35,7 +35,7 @@
     </LinearLayout>
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="320sp"
+        android:layout_height="wrap_content"
         android:background="#fff">
         <TableRow
             android:layout_width="match_parent"
@@ -251,24 +251,22 @@
                     android:layout_width="match_parent"/>
             </com.andexert.library.RippleView>
         </TableRow>
+        <TableRow
+            android:gravity="center">
+            <com.holyboom.flyer.tel.MaterialUi.FloatingActionBar.FloatingActionButton
+                android:id="@+id/fab_button_message"
+                android:layout_width="72dp"
+                android:layout_height="72dp"/>
+            <com.holyboom.flyer.tel.MaterialUi.FloatingActionBar.FloatingActionButton
+                android:id="@+id/fab_button_call"
+                android:layout_marginLeft="50sp"
+                android:layout_width="72dp"
+                android:layout_height="72dp"/>
+            <com.holyboom.flyer.tel.MaterialUi.FloatingActionBar.FloatingActionButton
+                android:id="@+id/fab_button_contact"
+                android:layout_marginLeft="50sp"
+                android:layout_width="72dp"
+                android:layout_height="72dp"/>
+        </TableRow>
     </TableLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
-        <com.holyboom.flyer.tel.MaterialUi.FloatingActionBar.FloatingActionButton
-            android:id="@+id/fab_button_message"
-            android:layout_width="72dp"
-            android:layout_height="72dp"/>
-        <com.holyboom.flyer.tel.MaterialUi.FloatingActionBar.FloatingActionButton
-            android:id="@+id/fab_button_call"
-            android:layout_marginLeft="50sp"
-            android:layout_width="72dp"
-            android:layout_height="72dp"/>
-        <com.holyboom.flyer.tel.MaterialUi.FloatingActionBar.FloatingActionButton
-            android:id="@+id/fab_button_contact"
-            android:layout_marginLeft="50sp"
-            android:layout_width="72dp"
-            android:layout_height="72dp"/>
-    </LinearLayout>
 </LinearLayout>
