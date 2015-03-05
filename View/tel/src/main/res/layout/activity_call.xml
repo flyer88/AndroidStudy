@@ -9,29 +9,46 @@
 
     <include layout="@layout/card_view_call"/>
     <LinearLayout
-
         android:background="#fff"
         android:layout_marginTop="80dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageButton
-            android:background="#fff"
-            android:id="@+id/tel_more"
+        <com.andexert.library.RippleView
+            android:gravity="center"
+            android:layout_width="0dip"
             android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            ripple:rv_rippleDuration="100"
+            ripple:rv_color="@color/green_dark"
+            ripple:rv_alpha="200">
+            <ImageButton
+                android:src="@drawable/more"
+                android:background="#fff"
+                android:id="@+id/tel_more"
+                android:layout_height="40dp"
+                android:layout_width="40dp"/>
+        </com.andexert.library.RippleView>
         <EditText
             android:id="@+id/tel_number"
             android:gravity="center"
             android:layout_height="match_parent"
             android:layout_width="0dp"
-            android:layout_weight="3"/>
-        <ImageButton
-            android:background="#fff"
-            android:id="@+id/tel_back"
+            android:layout_weight="4"/>
+        <com.andexert.library.RippleView
+            android:gravity="center"
+            android:layout_width="0dip"
             android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            ripple:rv_rippleDuration="100"
+            ripple:rv_color="@color/green_dark"
+            ripple:rv_alpha="200">
+            <ImageButton
+                android:src="@drawable/back"
+                android:background="#fff"
+                android:id="@+id/tel_back"
+                android:layout_height="40dp"
+                android:layout_width="40dp"/>
+        </com.andexert.library.RippleView>
     </LinearLayout>
     <TableLayout
         android:layout_width="match_parent"

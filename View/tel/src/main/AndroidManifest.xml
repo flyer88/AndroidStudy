@@ -17,8 +17,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Contact.ContactActivity"/>
-        <activity android:name=".Message.MessageActivity"/>
+        <activity
+
+            android:name=".Contact.ContactActivity"/>
+        <activity
+            android:theme="@style/Transparent"
+            android:name=".Contact.EditContactActivity"/>
+        <activity
+            android:name=".Message.MessageActivity"/>
     </application>
 
 </manifest>

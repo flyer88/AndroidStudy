@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    android:layout_gravity="center"
+    android:id="@+id/card_view"
+    android:layout_margin="16dp"
+    android:layout_height="430dp"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="180dp" />
+            <LinearLayout
+                android:layout_margin="16dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/green_light"
+                    android:text="姓 名："
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <EditText
+                    android:gravity="center"
+                    android:textColor="@color/green_light"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+
+                android:layout_margin="16dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/green_light"
+                    android:text="电 话："
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <EditText
+                    android:gravity="center"
+                    android:textColor="@color/green_light"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <com.andexert.library.RippleView
+                android:layout_margin="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ripple:rv_rippleDuration="100"
+                ripple:rv_color="@color/green_dark"
+                ripple:rv_alpha="200">
+                <Button
+                    android:textColor="#fff"
+                    android:background="@color/green_light"
+                    android:text="添加联系人"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+            </com.andexert.library.RippleView>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>

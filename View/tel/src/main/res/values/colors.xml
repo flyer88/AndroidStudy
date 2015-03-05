@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="trans_add_contact">#9000</color>
+
+
     <color name="green_dark">#ff0c9b9c</color>
     <color name="green_light">#ff80cbc4</color>
 

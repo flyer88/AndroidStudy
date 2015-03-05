@@ -13,7 +13,6 @@
 
     <TextView
         android:id="@+id/text_view_call"
-        android:text="@string/hello_world"
         android:layout_gravity="center"
         android:textSize="24sp"
         android:textColor="@android:color/white"
