@@ -8,13 +8,16 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.holyboom.flyer.tel.MaterialUi.FloatingActionBar.FloatingActionButton;
 import com.holyboom.flyer.tel.R;
+import com.holyboom.flyer.tel.Util.DatabaseUtil;
 import com.holyboom.flyer.tel.Util.ProviderUtil;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by flyer on 15/2/27.
@@ -45,8 +48,10 @@ public class ContactActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 if (VIEW_PAGER_POSITION == 0) {
-                    Intent intent = new Intent(ContactActivity.this, EditContactActivity.class);
-                    startActivity(intent);
+                    DatabaseUtil databaseUtil = new DatabaseUtil(ContactActivity.this);
+                    databaseUtil.initDatabase();
+//                    Intent intent = new Intent(ContactActivity.this, EditContactActivity.class);
+//                    startActivity(intent);
                 }else if (VIEW_PAGER_POSITION == 1){
 
                 }else if (VIEW_PAGER_POSITION ==2){
@@ -72,11 +77,14 @@ public class ContactActivity extends ActionBarActivity {
      * 初始化所有联系人界面
      */
     public void initAllContactUI(){
-        ProviderUtil providerUtil = new ProviderUtil(ContactActivity.this);
+        DatabaseUtil databaseUtil = new DatabaseUtil(ContactActivity.this);
+        //ProviderUtil providerUtil = new ProviderUtil(ContactActivity.this);
         allContactRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_all_contact);
         //contactList = providerUtil.readAllLocalContacts();
         //contactList = providerUtil.readAllSimContacts();
-        allContactList = providerUtil.readAllContacts();
+        allContactList = databaseUtil.getContactList();
+        //allContactList = providerUtil.readAllContacts();
+        //Log.e("allContactList",allContactList.size()+"");
         //contactList = providerUtil.readContacts();
         allContactAdapter = new ContactAdapter(ContactActivity.this,allContactList);
         allContactRecyclerView.setLayoutManager(new LinearLayoutManager(this));
