@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,7 @@ public class CallActivity extends ActionBarActivity {
     ImageButton telBack;
     EditText editTextNumber;
     TextView textViewCall;
+    Toolbar callToolbar;
     RippleView rippleView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,10 @@ public class CallActivity extends ActionBarActivity {
         messageFab.setDrawable(getResources().getDrawable(R.drawable.message_fab));
         //rippleView = (RippleView) findViewById(R.id.ripple_view);
         setThemeColor(MaterialGreen);
+        callToolbar = (Toolbar) findViewById(R.id.tool_bar_call);
+        setSupportActionBar(callToolbar);
+        //getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void setThemeColor(int color){

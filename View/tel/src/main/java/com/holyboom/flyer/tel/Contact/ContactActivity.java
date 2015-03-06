@@ -3,8 +3,11 @@ package com.holyboom.flyer.tel.Contact;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.holyboom.flyer.tel.MaterialUi.FloatingActionBar.FloatingActionButton;
@@ -16,42 +19,75 @@ import java.util.List;
 /**
  * Created by flyer on 15/2/27.
  */
-public class ContactActivity extends Activity {
+public class ContactActivity extends ActionBarActivity {
 
+    /**
+     * viewpager所在页面位置
+     */
+    public static int VIEW_PAGER_POSITION = 0;
+    ViewPager viewPager;
 
-    List<Contact> contactList;
-    ContactAdapter contactAdapter;
+    List<Contact> allContactList,favoriteContactList;
+    ContactAdapter allContactAdapter,favoriteContactAdapter;
+    RecyclerView allContactRecyclerView,favoriteContactRecyclerView;
 
-    RecyclerView contactRecyclerView;
+    Toolbar toolbar;
     FloatingActionButton addContactFab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
-        initContactUI();
-
-        ProviderUtil providerUtil = new ProviderUtil(ContactActivity.this);
-        //contactList = providerUtil.readAllLocalContacts();
-        //contactList = providerUtil.readAllSimContacts();
-        contactList = providerUtil.readAllContacts();
-        contactAdapter = new ContactAdapter(ContactActivity.this,contactList);
-
-        contactRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        contactRecyclerView.setHasFixedSize(true);
-        contactRecyclerView.setAdapter(contactAdapter);
+        initBasicContactUI();
+        initAllContactUI();
+        initFavoriteContactUI();
+        //根据VIEW_PAGER_POSITION的值来判断当前所在页面，由此跳转不同的修改联系人页面
         addContactFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ContactActivity.this,EditContactActivity.class);
-                startActivity(intent);
+                if (VIEW_PAGER_POSITION == 0) {
+                    Intent intent = new Intent(ContactActivity.this, EditContactActivity.class);
+                    startActivity(intent);
+                }else if (VIEW_PAGER_POSITION == 1){
+
+                }else if (VIEW_PAGER_POSITION ==2){
+
+                }
             }
         });
     }
-    public void initContactUI(){
+
+    /**
+     * 初始化右下角按钮以及toolbar
+     */
+    public void initBasicContactUI(){
         int MaterialGreen = getResources().getColor(R.color.green_light);
-        contactRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_contact);
+        toolbar = (Toolbar) findViewById(R.id.tool_bar_contact);
+        setSupportActionBar(toolbar);
         addContactFab = (FloatingActionButton) findViewById(R.id.fab_add_contact);
         addContactFab.setDrawable(getResources().getDrawable(R.drawable.add_contact_fab));
         addContactFab.setColor(MaterialGreen);
+    }
+
+    /**
+     * 初始化所有联系人界面
+     */
+    public void initAllContactUI(){
+        ProviderUtil providerUtil = new ProviderUtil(ContactActivity.this);
+        allContactRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_all_contact);
+        //contactList = providerUtil.readAllLocalContacts();
+        //contactList = providerUtil.readAllSimContacts();
+        allContactList = providerUtil.readAllContacts();
+        //contactList = providerUtil.readContacts();
+        allContactAdapter = new ContactAdapter(ContactActivity.this,allContactList);
+        allContactRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        allContactRecyclerView.setHasFixedSize(true);
+        allContactRecyclerView.setAdapter(allContactAdapter);
+    }
+
+    /**
+     * 初始化收藏联系人界面
+     */
+    public void initFavoriteContactUI(){
+        favoriteContactRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_favorite_contact);
     }
 }

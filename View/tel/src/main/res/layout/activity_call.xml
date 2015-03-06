@@ -6,7 +6,11 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar_call"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/green_dark"/>
     <include layout="@layout/card_view_call"/>
     <LinearLayout
         android:background="#fff"
