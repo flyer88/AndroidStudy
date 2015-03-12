@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:src="@drawable/compass"
+        android:id="@+id/compass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pointer"
+        android:layout_alignLeft="@+id/pointer"
+        android:layout_alignStart="@+id/pointer" />
+    <ImageView
+        android:src="@drawable/pointer"
+        android:id="@+id/pointer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+</RelativeLayout>

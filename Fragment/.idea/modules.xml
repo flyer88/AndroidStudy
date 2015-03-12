@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Fragment.iml" filepath="$PROJECT_DIR$/Fragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmentpractice/fragmentpractice.iml" filepath="$PROJECT_DIR$/fragmentpractice/fragmentpractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mylaunchactivity/mylaunchactivity.iml" filepath="$PROJECT_DIR$/mylaunchactivity/mylaunchactivity.iml" />
     </modules>
   </component>
 </project>

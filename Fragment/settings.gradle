@@ -1,1 +1,1 @@
-include ':app', ':fragmentpractice'
+include ':app', ':fragmentpractice', ':mylaunchactivity'
