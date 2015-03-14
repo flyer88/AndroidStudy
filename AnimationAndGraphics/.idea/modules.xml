@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AnimationAndGraphics.iml" filepath="$PROJECT_DIR$/AnimationAndGraphics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudyBitmap/StudyBitmap.iml" filepath="$PROJECT_DIR$/StudyBitmap/StudyBitmap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/canvasandpaint/canvasandpaint.iml" filepath="$PROJECT_DIR$/canvasandpaint/canvasandpaint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/path/path.iml" filepath="$PROJECT_DIR$/path/path.iml" />
+    </modules>
+  </component>
+</project>
+

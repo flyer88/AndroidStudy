@@ -1,0 +1,1 @@
+include ':StudyBitmap', ':canvasandpaint', ':path'
