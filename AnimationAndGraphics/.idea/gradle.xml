@@ -9,8 +9,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/StudyBitmap" />
+            <option value="$PROJECT_DIR$/animation" />
             <option value="$PROJECT_DIR$/canvasandpaint" />
+            <option value="$PROJECT_DIR$/handdraw" />
             <option value="$PROJECT_DIR$/path" />
+            <option value="$PROJECT_DIR$/pingpang" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HandDraw">
+    <item android:title="color">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/red" android:title="color_red"></item>
+                <item android:id="@+id/green" android:title="color_green"></item>
+                <item android:id="@+id/blue" android:title="color_blue"></item>
+            </group>
+        </menu>
+    </item>
+    <item android:title="width">
+        <menu>
+            <group>
+                <item android:id="@+id/width_1" android:title="width_1"></item>
+                <item android:id="@+id/width_3" android:title="width_3"></item>
+                <item android:id="@+id/width_5" android:title="width_5"></item>
+            </group>
+        </menu>
+    </item>
+    <item android:id="@+id/blur" android:title="blur"/>
+    <item android:id="@+id/emboss" android:title="emboss"/>
+</menu>

@@ -4,8 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AnimationAndGraphics.iml" filepath="$PROJECT_DIR$/AnimationAndGraphics.iml" />
       <module fileurl="file://$PROJECT_DIR$/StudyBitmap/StudyBitmap.iml" filepath="$PROJECT_DIR$/StudyBitmap/StudyBitmap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/animation/animation.iml" filepath="$PROJECT_DIR$/animation/animation.iml" />
       <module fileurl="file://$PROJECT_DIR$/canvasandpaint/canvasandpaint.iml" filepath="$PROJECT_DIR$/canvasandpaint/canvasandpaint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/handdraw/handdraw.iml" filepath="$PROJECT_DIR$/handdraw/handdraw.iml" />
       <module fileurl="file://$PROJECT_DIR$/path/path.iml" filepath="$PROJECT_DIR$/path/path.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pingpang/pingpang.iml" filepath="$PROJECT_DIR$/pingpang/pingpang.iml" />
     </modules>
   </component>
 </project>
